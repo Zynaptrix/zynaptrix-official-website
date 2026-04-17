@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -104,7 +100,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--paper));
+    color: hsl(var(--ink));
     font-family: var(--font-inter), system-ui, sans-serif;
   }
 
@@ -118,8 +115,14 @@ All colors MUST be HSL.
   }
 }
 
-@layer components {
-  /* Custom utility classes can be added here */
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-fraunces), Georgia, serif !important;
+  }
+
+  .font-sans {
+    font-family: var(--font-inter), system-ui, sans-serif !important;
+  }
 }
 
 /* Smooth transitions for interactive elements */
