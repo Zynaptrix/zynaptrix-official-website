@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
 
 const papers = [
   { title: "Compositional reasoning in foundation models", year: "2024" },
@@ -23,16 +23,6 @@ const team = [
 const press = ["The Atlantic", "Wired", "The Times", "Bloomberg", "Le Monde"];
 
 export default function Home() {
-  const [imageIndex, setImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setImageIndex((prev) => (prev + 1) % 1);
-  };
-
-  const prevImage = () => {
-    setImageIndex((prev) => (prev - 1 + 1) % 1);
-  };
-
   return (
     <div className="min-h-screen bg-paper text-ink font-sans antialiased">
       {/* Nav */}
@@ -73,19 +63,20 @@ export default function Home() {
         <div className="relative mt-10 flex items-center justify-center">
           <button
             aria-label="Previous"
-            onClick={prevImage}
             className="absolute left-0 md:left-8 text-ink/40 hover:text-ink transition z-10"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
-          <div className="w-[min(680px,90%)] h-auto bg-gradient-to-b from-ink/10 to-ink/30 rounded-lg flex items-center justify-center min-h-[400px]">
-            <span className="text-ink/20 text-sm">
-              Neural sculpture visualization
-            </span>
-          </div>
+          <Image
+            src="/neural-sculpture.png"
+            alt="Abstract neural network sculpture representing Zynaptrix research"
+            width={680}
+            height={680}
+            priority
+            className="w-[min(680px,90%)] h-auto rounded-lg"
+          />
           <button
             aria-label="Next"
-            onClick={nextImage}
             className="absolute right-0 md:right-8 text-ink/40 hover:text-ink transition z-10"
           >
             <ArrowRight className="h-5 w-5" />
