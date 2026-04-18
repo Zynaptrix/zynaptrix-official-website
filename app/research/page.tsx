@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { PageShell } from "@/components/SiteChrome";
 
 const papers = [
   { title: "Compositional reasoning in foundation models", year: "2024" },
@@ -25,33 +26,8 @@ const press = ["The Atlantic", "Wired", "The Times", "Bloomberg", "Le Monde"];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-sans antialiased">
-      {/* Nav */}
-      <header className="mx-auto max-w-6xl px-8 pt-10 flex items-center justify-between">
-        <Link href="/" className="text-sm tracking-[0.2em] font-medium">
-          ZYNAPTRIX
-        </Link>
-        <nav className="hidden md:flex items-center gap-10 text-sm text-ink/80">
-          <a href="#team" className="hover:text-ink transition">
-            Team
-          </a>
-          <a href="#papers" className="hover:text-ink transition">
-            Papers
-          </a>
-          <a href="#press" className="hover:text-ink transition">
-            Press
-          </a>
-          <a href="#contact" className="hover:text-ink transition">
-            Contact
-          </a>
-        </nav>
-        <a
-          href="#contact"
-          className="rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:bg-ink/90 transition"
-        >
-          ZYN—2078
-        </a>
-      </header>
+    <PageShell>
+
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-8 pt-24 pb-16 text-center relative">
@@ -174,14 +150,6 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-rule">
-        <div className="mx-auto max-w-6xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-subtle">
-          <p>Zynaptrix Research / Cambridge / NY</p>
-          <p>© Zynaptrix 2078</p>
-          <p className="tracking-[0.2em]">EST. MMXXIV</p>
-        </div>
-      </footer>
-    </div>
+    </PageShell>
   );
 }

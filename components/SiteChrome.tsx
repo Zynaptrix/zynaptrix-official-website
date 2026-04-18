@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -13,6 +16,7 @@ export function ZMark({ className = "" }: { className?: string }) {
 }
 
 const navItems = [
+  { label: "Research", to: "/research" },
   { label: "Studio", to: "/studio" },
   { label: "Work", to: "/work" },
   { label: "Lab", to: "/lab" },
@@ -51,6 +55,20 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  if (pathname === "/research") {
+    return (
+      <footer className="border-t border-rule mt-10 relative z-30">
+        <div className="mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-subtle">
+          <p>Zynaptrix Research / Cambridge / NY</p>
+          <p>© Zynaptrix 2078</p>
+          <p className="tracking-[0.2em]">EST. MMXXIV</p>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="animate-soft-fade-up relative z-30 flex items-end justify-between px-6 pb-7 md:px-12 mt-10">
       <p className="text-[11px] font-bold tracking-[0.28em] text-ink/95">
