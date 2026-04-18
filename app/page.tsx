@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
 
 const papers = [
@@ -27,9 +28,9 @@ export default function Home() {
     <div className="min-h-screen bg-paper text-ink font-sans antialiased">
       {/* Nav */}
       <header className="mx-auto max-w-6xl px-8 pt-10 flex items-center justify-between">
-        <a href="/" className="text-sm tracking-[0.2em] font-medium">
+        <Link href="/" className="text-sm tracking-[0.2em] font-medium">
           ZYNAPTRIX
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-10 text-sm text-ink/80">
           <a href="#team" className="hover:text-ink transition">
             Team
@@ -114,8 +115,8 @@ export default function Home() {
           <ul className="divide-y divide-rule border-t border-rule">
             {papers.map((p) => (
               <li key={p.title}>
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className="flex items-center justify-between gap-6 py-4 group"
                 >
                   <span className="text-ink group-hover:underline underline-offset-4 decoration-1">
@@ -124,7 +125,7 @@ export default function Home() {
                   <span className="text-subtle text-sm tabular-nums">
                     {p.year}
                   </span>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -137,7 +138,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-rule border border-rule">
           {team.map((m) => (
             <div key={m.name} className="bg-paper aspect-[4/5] flex flex-col">
-              <div className="flex-1 bg-gradient-to-b from-ink/10 to-ink/30" />
+              <div className="flex-1 bg-gradient-to-b from-[hsl(var(--ink)/0.1)] to-[hsl(var(--ink)/0.3)]" />
               <div className="p-4">
                 <p className="font-serif text-lg leading-tight">{m.name}</p>
                 <p className="text-xs text-subtle mt-1">{m.role}</p>
