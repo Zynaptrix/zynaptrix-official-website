@@ -137,8 +137,8 @@ export default function Home() {
         <h2 className="font-serif text-4xl text-center mb-12">Research team</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-rule border border-rule">
           {team.map((m) => (
-            <div key={m.name} className="bg-paper aspect-[4/5] flex flex-col">
-              <div className="flex-1 bg-gradient-to-b from-[hsl(var(--ink)/0.1)] to-[hsl(var(--ink)/0.3)]" />
+            <div key={m.name} className="bg-paper aspect-4/5 flex flex-col">
+              <div className="flex-1 bg-linear-to-b from-[hsl(var(--ink)/0.1)] to-[hsl(var(--ink)/0.3)]" />
               <div className="p-4">
                 <p className="font-serif text-lg leading-tight">{m.name}</p>
                 <p className="text-xs text-subtle mt-1">{m.role}</p>
