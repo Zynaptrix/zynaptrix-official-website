@@ -16,11 +16,10 @@ export function ZMark({ className = "" }: { className?: string }) {
 }
 
 const navItems = [
-  { label: "Research", to: "/research" },
   { label: "Studio", to: "/studio" },
   { label: "Work", to: "/work" },
   { label: "Lab", to: "/lab" },
-  { label: "Journal", to: "/journal" },
+  { label: "Research", to: "/research" },
 ];
 
 export function SiteHeader() {
