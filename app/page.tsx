@@ -1,6 +1,8 @@
 "use client";
 
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
+import { Marquee } from "@/components/Marquee";
+import { StudioSection } from "@/components/StudioSection";
 
 export default function Home() {
   return (
@@ -8,7 +10,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero composition */}
-      <section className="relative z-20 mx-auto flex flex-1 w-full max-w-[1500px] items-center justify-center px-6">
+      <section className="relative z-20 mx-auto flex min-h-[80vh] w-full max-w-[1500px] items-center justify-center px-6">
         <div className="relative flex w-full items-center justify-center">
           <h1
             aria-label="ZYNAPTRIX"
@@ -35,6 +37,9 @@ export default function Home() {
           </h1>
         </div>
       </section>
+
+      <Marquee />
+      <StudioSection />
 
       <SiteFooter />
     </main>
