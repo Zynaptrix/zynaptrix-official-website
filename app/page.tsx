@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 
 export default function Home() {

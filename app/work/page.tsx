@@ -17,7 +17,7 @@ export default function WorkPage() {
         </h1>
         
         <div className="border-t border-rule font-sans">
-           {projects.map((project, i) => (
+           {projects.map((project) => (
              <div key={project.name} className="py-12 md:py-16 border-b border-rule grid lg:grid-cols-[1fr_2fr_auto] gap-6 md:gap-12 group cursor-pointer hover:bg-ink/[0.02] transition-colors -mx-6 px-6 md:-mx-12 md:px-12">
                 <p className="font-serif text-3xl md:text-4xl text-ink/90 group-hover:text-ink transition-colors">{project.name}</p>
                 <div className="flex flex-col justify-center">
