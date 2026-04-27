@@ -3,36 +3,10 @@
 import { StudioGridCard } from "./studio/StudioGridCard";
 import { FadeInSection } from "./FadeInSection";
 
-const services = [
-  {
-    num: "01",
-    title: "Digital Architecture",
-    desc: "We design and build scalable digital ecosystems that form the backbone of modern business operations.",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    num: "02",
-    title: "Intelligence Systems",
-    desc: "Integrating advanced AI and machine learning models to automate complex workflows.",
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-1",
-  },
-  {
-    num: "03",
-    title: "Interface Design",
-    desc: "High-fidelity, interactive user experiences that bridge the gap between human and machine.",
-    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-1",
-  },
-  {
-    num: "04",
-    title: "Research & Development",
-    desc: "Pushing the boundaries of what's possible with emerging technologies and experimental code.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-2",
-  },
-];
+import studioItems from "@/data/studio-items.json";
+import Link from "next/link";
+
+const services = studioItems.slice(0, 4);
 
 export function StudioSection() {
   return (
@@ -48,13 +22,17 @@ export function StudioSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, idx) => (
-          <StudioGridCard
-            key={idx}
-            {...service}
-            delay={idx * 100}
-          />
+          <Link key={idx} href="/studio" className={service.colSpan}>
+            <StudioGridCard
+              {...service}
+              colSpan="w-full"
+              delay={idx * 100}
+            />
+          </Link>
         ))}
       </div>
+
     </section>
   );
 }
+

@@ -4,50 +4,8 @@ import { PageShell } from "@/components/SiteChrome";
 import { StudioGridCard } from "@/components/studio/StudioGridCard";
 import { FadeInSection } from "@/components/FadeInSection";
 
-const studioItems = [
-  {
-    num: "01",
-    title: "Digital Architecture",
-    desc: "We design and build scalable digital ecosystems that form the backbone of modern business operations.",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    num: "02",
-    title: "Intelligence Systems",
-    desc: "Integrating advanced AI and machine learning models to automate complex workflows.",
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-1",
-  },
-  {
-    num: "03",
-    title: "Interface Design",
-    desc: "High-fidelity, interactive user experiences that bridge the gap between human and machine.",
-    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-1",
-  },
-  {
-    num: "04",
-    title: "Research & Development",
-    desc: "Pushing the boundaries of what's possible with emerging technologies and experimental code.",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    num: "05",
-    title: "The Environment",
-    desc: "A sanctuary for deep work. No open floor plans, no distractions. Just quiet spaces designed for concentration and the pursuit of general-purpose intelligence.",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    num: "06",
-    title: "Culture & Thinking",
-    desc: "We value rigorous methodology over quick hacks. True breakthroughs require patience, multidisciplinary thinking, and a willingness to question assumptions.",
-    img: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
-    colSpan: "lg:col-span-1",
-  },
-];
+import studioItems from "@/data/studio-items.json";
+import Link from "next/link";
 
 export default function StudioPage() {
   return (
@@ -68,25 +26,58 @@ export default function StudioPage() {
           </FadeInSection>
         </header>
 
-        {/* Studio Grid */}
+        {/* Studio Grid - Core Services Only */}
         <main className="px-8 md:px-24 pb-32 max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {studioItems.map((item, idx) => (
-              <StudioGridCard
-                key={idx}
-                num={item.num}
-                title={item.title}
-                desc={item.desc}
-                img={item.img}
-                colSpan={item.colSpan}
-                delay={idx * 100}
-              />
+            {studioItems.slice(0, 4).map((item, idx) => (
+              <Link key={idx} href={`/studio/${item.slug}`} className={item.colSpan}>
+                <StudioGridCard
+                  num={item.num}
+                  title={item.title}
+                  desc={item.desc}
+                  img={item.img}
+                  colSpan="w-full"
+                  delay={idx * 100}
+                />
+              </Link>
             ))}
           </div>
         </main>
 
+        {/* Philosophy & Environment Section */}
+        <section className="px-8 md:px-24 py-32 bg-ink text-paper w-full">
+          <div className="max-w-7xl mx-auto">
+            <FadeInSection>
+              <h2 className="text-xs tracking-[0.2em] font-bold text-paper/40 mb-20 uppercase">Philosophy & Space</h2>
+            </FadeInSection>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+              {studioItems.slice(4, 6).map((item, idx) => (
+                <div key={idx} className="group">
+                  <FadeInSection delay={idx * 200}>
+                    <div className="aspect-[16/10] overflow-hidden mb-12 rounded-sm bg-paper/5">
+                      <img 
+                        src={item.img} 
+                        className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" 
+                        alt={item.title}
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono tracking-widest text-paper/40 mb-6 block">{item.num} //</span>
+                    <h3 className="text-4xl md:text-5xl font-serif mb-8 tracking-tight">{item.title}</h3>
+                    <p className="text-xl font-serif leading-relaxed text-paper/60 max-w-lg">
+                      {item.content}
+                    </p>
+                  </FadeInSection>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* Call to Action */}
-        <section className="px-8 md:px-24 pb-48 max-w-7xl mx-auto w-full text-center">
+        <section className="px-8 md:px-24 py-48 max-w-7xl mx-auto w-full text-center">
+
           <FadeInSection delay={400}>
             <div className="w-full h-px bg-black/10 mb-24"></div>
             <h2 className="text-4xl md:text-5xl font-serif mb-12">Join the collective</h2>
@@ -103,3 +94,4 @@ export default function StudioPage() {
     </PageShell>
   );
 }
+

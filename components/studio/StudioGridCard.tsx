@@ -12,6 +12,7 @@ interface StudioGridCardProps {
   children?: React.ReactNode;
   colSpan?: string;
   delay?: number;
+  onClick?: () => void;
 }
 
 export function StudioGridCard({
@@ -22,9 +23,11 @@ export function StudioGridCard({
   children,
   colSpan = "lg:col-span-1",
   delay = 0,
+  onClick,
 }: StudioGridCardProps) {
   return (
-    <div className={`${colSpan}`}>
+    <div className={`${colSpan}`} onClick={onClick}>
+
       <FadeInSection delay={delay}>
         <div className="group relative w-full h-[400px] md:h-[450px] overflow-hidden bg-[#0a0b10] cursor-pointer rounded-sm">
           {/* Background Layer */}
