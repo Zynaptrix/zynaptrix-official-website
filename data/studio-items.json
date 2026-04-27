@@ -1,0 +1,68 @@
+[
+  {
+    "num": "01",
+    "slug": "digital-architecture",
+    "title": "Digital Architecture",
+    "desc": "We design and build scalable digital ecosystems that form the backbone of modern business operations.",
+    "img": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-2",
+    "subtitle": "Building the foundation of the future.",
+    "content": "Our approach to digital architecture is rooted in scalability and performance. We don't just build websites; we create complex systems that handle millions of requests while maintaining a seamless user experience. By leveraging microservices and serverless technologies, we ensure your infrastructure grows with your business.",
+    "tags": ["Microservices", "Cloud Native", "React", "Node.js"]
+  },
+  {
+    "num": "02",
+    "slug": "intelligence-systems",
+    "title": "Intelligence Systems",
+    "desc": "Integrating advanced AI and machine learning models to automate complex workflows.",
+    "img": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-1",
+    "subtitle": "Cognitive computing for the modern enterprise.",
+    "content": "Artificial Intelligence is no longer a luxury. We integrate state-of-the-art LLMs and predictive models directly into your business processes. From automated customer support to complex data analysis, our intelligence systems turn raw data into actionable insights.",
+    "tags": ["PyTorch", "TensorFlow", "NLP", "OpenAI"]
+  },
+  {
+    "num": "03",
+    "slug": "interface-design",
+    "title": "Interface Design",
+    "desc": "High-fidelity, interactive user experiences that bridge the gap between human and machine.",
+    "img": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-1",
+    "subtitle": "Where form meets function.",
+    "content": "Design is more than just aesthetics; it's about how it works. We focus on the intersection of human psychology and digital interaction. Our interfaces are designed to be intuitive, reducing cognitive load and creating a delightful experience for every user.",
+    "tags": ["Figma", "Motion Dev", "UX Research", "WebGL"]
+  },
+  {
+    "num": "04",
+    "slug": "research-development",
+    "title": "Research & Development",
+    "desc": "Pushing the boundaries of what's possible with emerging technologies and experimental code.",
+    "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-2",
+    "subtitle": "Exploring the unknown.",
+    "content": "Innovation happens at the edges. Our R&D team is constantly experimenting with Web3, Spatial Computing, and Edge Intelligence. We help our clients stay ahead of the curve by identifying and implementing the technologies of tomorrow, today.",
+    "tags": ["Quantum Computing", "Web3", "Unity", "Rust"]
+  },
+  {
+    "num": "05",
+    "slug": "the-environment",
+    "title": "The Environment",
+    "desc": "A sanctuary for deep work. No open floor plans, no distractions. Just quiet spaces designed for concentration and the pursuit of general-purpose intelligence.",
+    "img": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-2",
+    "subtitle": "Crafting the perfect headspace.",
+    "content": "We believe that physical space significantly impacts cognitive output. Our studios are designed as sanctuaries—minimalist, silent, and filled with natural light. This environment allows our engineers and designers to enter 'flow state' and stay there longer.",
+    "tags": ["Acoustics", "Ergonomics", "Minimalism", "Biophilic Design"]
+  },
+  {
+    "num": "06",
+    "slug": "culture-thinking",
+    "title": "Culture & Thinking",
+    "desc": "We value rigorous methodology over quick hacks. True breakthroughs require patience, multidisciplinary thinking, and a willingness to question assumptions.",
+    "img": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
+    "colSpan": "lg:col-span-1",
+    "subtitle": "A philosophy of excellence.",
+    "content": "Our culture is built on the foundation of intellectual curiosity and extreme ownership. We encourage our team to look beyond their immediate domains, drawing inspiration from architecture, philosophy, and biology to solve complex technical problems.",
+    "tags": ["Philosophy", "Ethics", "Mentorship", "Critical Thinking"]
+  }
+]

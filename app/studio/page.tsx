@@ -1,81 +1,97 @@
 "use client";
 
 import { PageShell } from "@/components/SiteChrome";
-import { NeuralCanvas } from "@/components/studio/NeuralCanvas";
-import { SphereCanvas } from "@/components/studio/SphereCanvas";
+import { StudioGridCard } from "@/components/studio/StudioGridCard";
+import { FadeInSection } from "@/components/FadeInSection";
+
+import studioItems from "@/data/studio-items.json";
+import Link from "next/link";
 
 export default function StudioPage() {
   return (
     <PageShell>
-      <style dangerouslySetInnerHTML={{ __html: `
-        /* Entrance Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes fadeUpAnim {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-      ` }} />
-      <div className="bg-[#F9F8F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#F9F8F4]">
-
+      <div className="bg-[#F9F8F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#F9F8F4] min-h-screen">
+        
         {/* Hero Section */}
-        <header className="px-8 md:px-24 pt-24 pb-32 max-w-7xl mx-auto w-full">
-            <h1 className="text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.05] font-serif tracking-tight text-[#111] fade-up">
-                The Studio.<br/>
-                Where logic<br/>
-                meets intuition.
+        <header className="px-8 md:px-24 pt-32 pb-24 max-w-7xl mx-auto w-full">
+          <FadeInSection>
+            <h2 className="text-xs tracking-[0.2em] font-bold text-gray-400 mb-8 uppercase">The Studio</h2>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.05] font-serif tracking-tight text-[#111] mb-12">
+              Where logic<br/>
+              meets intuition.
             </h1>
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-3xl">
+              We engineer digital ecosystems. From elegant interfaces to robust backend infrastructures, we build software that drives real-world impact.
+            </p>
+          </FadeInSection>
         </header>
 
-        {/* Content Sections */}
-        <main className="flex-grow w-full max-w-7xl mx-auto pb-16">
-            
-            {/* Environment Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 px-8 md:px-24 py-24 items-center fade-up delay-100">
-                <div className="order-2 md:order-1 max-w-md">
-                    <h2 className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-black/40 mb-8">Environment</h2>
-                    <p className="text-2xl md:text-[1.75rem] leading-[1.5] font-serif text-[#222]">
-                        We've created a sanctuary for deep work. No open floor plans, no ping-pong tables. Just quiet spaces designed for concentration, collaboration, and the pursuit of general-purpose intelligence.
-                    </p>
-                </div>
-                <div className="order-1 md:order-2">
-                    <NeuralCanvas />
-                </div>
-            </section>
-
-            {/* Culture & Thinking Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 px-8 md:px-24 py-24 items-center fade-up delay-200">
-                <div className="order-1 md:order-2">
-                    <SphereCanvas />
-                </div>
-                <div className="max-w-md order-2 md:order-1">
-                    <h2 className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-black/40 mb-8">Culture & Thinking</h2>
-                    <p className="text-2xl md:text-[1.75rem] leading-[1.5] font-serif text-[#222] mb-8">
-                        We value rigorous methodology over quick hacks. True breakthroughs require patience, multidisciplinary thinking, and a willingness to question fundamental assumptions.
-                    </p>
-                    <p className="text-sm font-sans text-[#555] leading-relaxed">
-                        Our culture is rooted in intense curiosity. We hire researchers who are as comfortable discussing philosophy as they are writing CUDA kernels. The best ideas often emerge at the intersection of entirely different computational disciplines.
-                    </p>
-                </div>
-            </section>
-
+        {/* Studio Grid - Core Services Only */}
+        <main className="px-8 md:px-24 pb-32 max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {studioItems.slice(0, 4).map((item, idx) => (
+              <Link key={idx} href={`/studio/${item.slug}`} className={item.colSpan}>
+                <StudioGridCard
+                  num={item.num}
+                  title={item.title}
+                  desc={item.desc}
+                  img={item.img}
+                  colSpan="w-full"
+                  delay={idx * 100}
+                />
+              </Link>
+            ))}
+          </div>
         </main>
 
+        {/* Philosophy & Environment Section */}
+        <section className="px-8 md:px-24 py-32 bg-ink text-paper w-full">
+          <div className="max-w-7xl mx-auto">
+            <FadeInSection>
+              <h2 className="text-xs tracking-[0.2em] font-bold text-paper/40 mb-20 uppercase">Philosophy & Space</h2>
+            </FadeInSection>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32">
+              {studioItems.slice(4, 6).map((item, idx) => (
+                <div key={idx} className="group">
+                  <FadeInSection delay={idx * 200}>
+                    <div className="aspect-[16/10] overflow-hidden mb-12 rounded-sm bg-paper/5">
+                      <img 
+                        src={item.img} 
+                        className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105" 
+                        alt={item.title}
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono tracking-widest text-paper/40 mb-6 block">{item.num} //</span>
+                    <h3 className="text-4xl md:text-5xl font-serif mb-8 tracking-tight">{item.title}</h3>
+                    <p className="text-xl font-serif leading-relaxed text-paper/60 max-w-lg">
+                      {item.content}
+                    </p>
+                  </FadeInSection>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* Call to Action */}
-        <section className="mt-24 mb-32 px-8 md:px-24 max-w-4xl mx-auto w-full text-center fade-up delay-300 pb-24">
+        <section className="px-8 md:px-24 py-48 max-w-7xl mx-auto w-full text-center">
+
+          <FadeInSection delay={400}>
             <div className="w-full h-px bg-black/10 mb-24"></div>
             <h2 className="text-4xl md:text-5xl font-serif mb-12">Join the collective</h2>
-            <a href="#" className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-black hover:text-black/50 transition-colors pb-1 border-b border-transparent hover:border-black/50">
-                View Open Roles
+            <a 
+              href="#" 
+              className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-black hover:text-black/50 transition-colors pb-1 border-b border-black/20 hover:border-black/50"
+            >
+              View Open Roles
             </a>
+          </FadeInSection>
         </section>
 
       </div>
     </PageShell>
   );
 }
+
