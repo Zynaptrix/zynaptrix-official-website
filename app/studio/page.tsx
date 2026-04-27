@@ -1,78 +1,102 @@
 "use client";
 
 import { PageShell } from "@/components/SiteChrome";
-import { NeuralCanvas } from "@/components/studio/NeuralCanvas";
-import { SphereCanvas } from "@/components/studio/SphereCanvas";
+import { StudioGridCard } from "@/components/studio/StudioGridCard";
+import { FadeInSection } from "@/components/FadeInSection";
+
+const studioItems = [
+  {
+    num: "01",
+    title: "Digital Architecture",
+    desc: "We design and build scalable digital ecosystems that form the backbone of modern business operations.",
+    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-2",
+  },
+  {
+    num: "02",
+    title: "Intelligence Systems",
+    desc: "Integrating advanced AI and machine learning models to automate complex workflows.",
+    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-1",
+  },
+  {
+    num: "03",
+    title: "Interface Design",
+    desc: "High-fidelity, interactive user experiences that bridge the gap between human and machine.",
+    img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-1",
+  },
+  {
+    num: "04",
+    title: "Research & Development",
+    desc: "Pushing the boundaries of what's possible with emerging technologies and experimental code.",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-2",
+  },
+  {
+    num: "05",
+    title: "The Environment",
+    desc: "A sanctuary for deep work. No open floor plans, no distractions. Just quiet spaces designed for concentration and the pursuit of general-purpose intelligence.",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-2",
+  },
+  {
+    num: "06",
+    title: "Culture & Thinking",
+    desc: "We value rigorous methodology over quick hacks. True breakthroughs require patience, multidisciplinary thinking, and a willingness to question assumptions.",
+    img: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=800",
+    colSpan: "lg:col-span-1",
+  },
+];
 
 export default function StudioPage() {
   return (
     <PageShell>
-      <style dangerouslySetInnerHTML={{ __html: `
-        /* Entrance Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes fadeUpAnim {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-      ` }} />
-      <div className="bg-[#F9F8F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#F9F8F4]">
-
+      <div className="bg-[#F9F8F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#F9F8F4] min-h-screen">
+        
         {/* Hero Section */}
-        <header className="px-8 md:px-24 pt-24 pb-32 max-w-7xl mx-auto w-full">
-            <h1 className="text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.05] font-serif tracking-tight text-[#111] fade-up">
-                The Studio.<br/>
-                Where logic<br/>
-                meets intuition.
+        <header className="px-8 md:px-24 pt-32 pb-24 max-w-7xl mx-auto w-full">
+          <FadeInSection>
+            <h2 className="text-xs tracking-[0.2em] font-bold text-gray-400 mb-8 uppercase">The Studio</h2>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.05] font-serif tracking-tight text-[#111] mb-12">
+              Where logic<br/>
+              meets intuition.
             </h1>
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-3xl">
+              We engineer digital ecosystems. From elegant interfaces to robust backend infrastructures, we build software that drives real-world impact.
+            </p>
+          </FadeInSection>
         </header>
 
-        {/* Content Sections */}
-        <main className="flex-grow w-full max-w-7xl mx-auto pb-16">
-            
-            {/* Environment Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 px-8 md:px-24 py-24 items-center fade-up delay-100">
-                <div className="order-2 md:order-1 max-w-md">
-                    <h2 className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-black/40 mb-8">Environment</h2>
-                    <p className="text-2xl md:text-[1.75rem] leading-[1.5] font-serif text-[#222]">
-                        We've created a sanctuary for deep work. No open floor plans, no ping-pong tables. Just quiet spaces designed for concentration, collaboration, and the pursuit of general-purpose intelligence.
-                    </p>
-                </div>
-                <div className="order-1 md:order-2">
-                    <NeuralCanvas />
-                </div>
-            </section>
-
-            {/* Culture & Thinking Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 px-8 md:px-24 py-24 items-center fade-up delay-200">
-                <div className="order-1 md:order-2">
-                    <SphereCanvas />
-                </div>
-                <div className="max-w-md order-2 md:order-1">
-                    <h2 className="text-[9px] font-mono font-bold uppercase tracking-[0.25em] text-black/40 mb-8">Culture & Thinking</h2>
-                    <p className="text-2xl md:text-[1.75rem] leading-[1.5] font-serif text-[#222] mb-8">
-                        We value rigorous methodology over quick hacks. True breakthroughs require patience, multidisciplinary thinking, and a willingness to question fundamental assumptions.
-                    </p>
-                    <p className="text-sm font-sans text-[#555] leading-relaxed">
-                        Our culture is rooted in intense curiosity. We hire researchers who are as comfortable discussing philosophy as they are writing CUDA kernels. The best ideas often emerge at the intersection of entirely different computational disciplines.
-                    </p>
-                </div>
-            </section>
-
+        {/* Studio Grid */}
+        <main className="px-8 md:px-24 pb-32 max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {studioItems.map((item, idx) => (
+              <StudioGridCard
+                key={idx}
+                num={item.num}
+                title={item.title}
+                desc={item.desc}
+                img={item.img}
+                colSpan={item.colSpan}
+                delay={idx * 100}
+              />
+            ))}
+          </div>
         </main>
 
         {/* Call to Action */}
-        <section className="mt-24 mb-32 px-8 md:px-24 max-w-4xl mx-auto w-full text-center fade-up delay-300 pb-24">
+        <section className="px-8 md:px-24 pb-48 max-w-7xl mx-auto w-full text-center">
+          <FadeInSection delay={400}>
             <div className="w-full h-px bg-black/10 mb-24"></div>
             <h2 className="text-4xl md:text-5xl font-serif mb-12">Join the collective</h2>
-            <a href="#" className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-black hover:text-black/50 transition-colors pb-1 border-b border-transparent hover:border-black/50">
-                View Open Roles
+            <a 
+              href="#" 
+              className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-black hover:text-black/50 transition-colors pb-1 border-b border-black/20 hover:border-black/50"
+            >
+              View Open Roles
             </a>
+          </FadeInSection>
         </section>
 
       </div>
