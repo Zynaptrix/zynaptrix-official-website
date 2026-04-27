@@ -3,6 +3,13 @@
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { Marquee } from "@/components/Marquee";
 import { StudioSection } from "@/components/StudioSection";
+import { 
+  WorkSection, 
+  ProcessSection, 
+  LabSection, 
+  TestimonialsSection, 
+  CTASection 
+} from "@/components/home";
 
 export default function Home() {
   return (
@@ -40,7 +47,12 @@ export default function Home() {
 
       <Marquee />
       <StudioSection />
-
+      
+      <WorkSection />
+      <ProcessSection />
+      <LabSection />
+      <TestimonialsSection />
+      <CTASection />
 
       <SiteFooter />
     </main>
