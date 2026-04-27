@@ -10,7 +10,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero composition */}
-      <section className="relative z-20 mx-auto flex min-h-[80vh] w-full max-w-[1500px] items-center justify-center px-6">
+      <section className="relative z-20 mx-auto flex min-h-[80vh] w-full max-w-[1500px] items-center justify-center px-8 md:px-16 lg:px-24">
         <div className="relative flex w-full items-center justify-center">
           <h1
             aria-label="ZYNAPTRIX"
@@ -40,6 +40,7 @@ export default function Home() {
 
       <Marquee />
       <StudioSection />
+
 
       <SiteFooter />
     </main>
