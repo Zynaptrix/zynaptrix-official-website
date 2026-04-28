@@ -78,14 +78,15 @@ export function ProductCarousel() {
       id="work"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="relative w-full max-w-7xl mx-auto my-24 px-6 md:px-12"
+      className="relative w-full py-24 bg-ink text-paper"
     >
-      <div className="mb-12">
-        <p className="text-xs font-bold tracking-widest uppercase text-[#10b981] mb-4">Proof of Life</p>
-        <h2 className="text-4xl md:text-5xl font-bold text-white">Selected Deployments</h2>
+      <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16">
+        <p className="text-xs font-bold tracking-widest uppercase text-emerald-500 mb-4">Proof of Life</p>
+        <h2 className="text-4xl md:text-5xl font-bold font-serif">Selected Deployments</h2>
       </div>
 
-      <div className="relative w-full h-[700px] overflow-hidden bg-[#050505] shadow-2xl rounded-3xl border border-white/5">
+      <div className="px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="relative w-full h-[700px] overflow-hidden bg-white/5 backdrop-blur-sm shadow-2xl rounded-lg border border-white/10">
         <AnimatePresence mode="wait">
           <motion.div
             key={project.id}
@@ -126,7 +127,7 @@ export function ProductCarousel() {
                 animate={{ scale: 1, opacity: 1, rotate: 0 }}
                 exit={{ scale: 1.1, opacity: 0, rotate: 5 }}
                 transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-                className="relative w-full max-w-[500px] aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                className="relative w-full max-w-[500px] aspect-square rounded-md overflow-hidden border border-white/10 shadow-2xl"
               >
                 <img
                   src={project.image}
@@ -138,20 +139,20 @@ export function ProductCarousel() {
             </div>
 
             {/* Project Info Side */}
-            <div className="w-1/2 flex flex-col justify-center p-16 text-white relative z-20">
+            <div className="w-1/2 flex flex-col justify-center pl-16 pr-40 relative z-20">
               <motion.div
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <h1 className="text-6xl font-bold mb-6 tracking-tight leading-tight">{project.name}</h1>
-                <p className="text-xl opacity-70 max-w-md mb-12 leading-relaxed font-light">
+                <h1 className="text-5xl font-bold mb-6 tracking-tight leading-tight font-serif text-white">{project.name}</h1>
+                <p className="text-xl text-white/70 max-w-md mb-12 leading-relaxed font-light">
                   {project.description}
                 </p>
                 
                 <motion.button 
                   whileHover={{ gap: '1.5rem' }}
-                  className="flex items-center gap-4 bg-white text-black px-8 py-4 rounded-full font-bold group transition-all"
+                  className="flex items-center gap-4 bg-emerald-500 text-white px-8 py-4 rounded-sm font-bold group transition-all"
                 >
                   View Case Study
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -161,14 +162,14 @@ export function ProductCarousel() {
           </div>
 
           {/* Bottom Bar (Stats) */}
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-black/80 backdrop-blur-xl border-t border-white/5 flex items-center z-30">
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-black/60 backdrop-blur-xl border-t border-white/10 flex items-center z-30">
             <div className="flex w-3/4 px-12 divide-x divide-white/10">
               {project.stats.map((stat, i) => (
                 <div key={stat.label} className="flex-1 px-8 first:pl-0">
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-white tracking-tight">{stat.value}</span>
+                    <span className="text-3xl font-bold text-white tracking-tight font-serif">{stat.value}</span>
                   </div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-white/40 mt-1 font-bold">{stat.label}</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-emerald-500/80 mt-1 font-bold">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -182,7 +183,7 @@ export function ProductCarousel() {
               <div className="relative flex-1 h-full overflow-hidden group cursor-pointer bg-white/5">
                 <img src={project.image} alt="preview" className="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 border border-white/20 rounded-sm flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
                     <Play className="text-white w-4 h-4 fill-white ml-1" />
                   </div>
                 </div>
@@ -206,7 +207,7 @@ export function ProductCarousel() {
             >
               <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
               <div className="relative w-full h-24 mb-4 z-10">
-                <img src={project.nextImage} alt="next" className="w-full h-full object-cover rounded-lg shadow-xl" />
+                <img src={project.nextImage} alt="next" className="w-full h-full object-cover rounded-sm shadow-xl" />
               </div>
               <span className="text-[10px] font-bold uppercase tracking-widest text-white/90 z-10">Next Case</span>
             </div>
@@ -214,6 +215,7 @@ export function ProductCarousel() {
         </motion.div>
       </AnimatePresence>
       </div>
+    </div>
     </section>
   );
 }
