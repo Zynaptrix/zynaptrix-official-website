@@ -1,4 +1,4 @@
-export * from './WorkSection';
+export * from './ProductCarousel';
 export * from './ProcessSection';
 export * from './LabSection';
 export * from './TestimonialsSection';

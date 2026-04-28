@@ -4,10 +4,10 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { Marquee } from "@/components/Marquee";
 import { StudioSection } from "@/components/StudioSection";
 import { 
-  WorkSection, 
   ProcessSection, 
   LabSection, 
-  TestimonialsSection, 
+  TestimonialsSection,
+  ProductCarousel,
   CTASection 
 } from "@/components/home";
 
@@ -45,13 +45,14 @@ export default function Home() {
         </div>
       </section>
 
-      <Marquee />
       <StudioSection />
       
-      <WorkSection />
+      <ProductCarousel />
       <ProcessSection />
       <LabSection />
       <TestimonialsSection />
+      
+      <Marquee />
       <CTASection />
 
       <SiteFooter />
