@@ -13,7 +13,7 @@ export default function StudioPage() {
       <div className="bg-[#F9F8F4] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#F9F8F4] min-h-screen">
         
         {/* Hero Section */}
-        <header className="px-8 md:px-24 pt-32 pb-24 max-w-7xl mx-auto w-full">
+        <header className="px-8 md:px-16 lg:px-24 pt-32 pb-24 max-w-[1500px] mx-auto w-full">
           <FadeInSection>
             <h2 className="text-xs tracking-[0.2em] font-bold text-gray-400 mb-8 uppercase">The Studio</h2>
             <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.05] font-serif tracking-tight text-[#111] mb-12">
@@ -27,7 +27,7 @@ export default function StudioPage() {
         </header>
 
         {/* Studio Grid - Core Services Only */}
-        <main className="px-8 md:px-24 pb-32 max-w-7xl mx-auto w-full">
+        <main className="px-8 md:px-16 lg:px-24 pb-32 max-w-[1500px] mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {studioItems.slice(0, 4).map((item, idx) => (
               <Link key={idx} href={`/studio/${item.slug}`} className={item.colSpan}>
@@ -38,15 +38,17 @@ export default function StudioPage() {
                   img={item.img}
                   colSpan="w-full"
                   delay={idx * 100}
+                  href={`/studio/${item.slug}`}
                 />
               </Link>
+
             ))}
           </div>
         </main>
 
         {/* Philosophy & Environment Section */}
-        <section className="px-8 md:px-24 py-32 bg-ink text-paper w-full">
-          <div className="max-w-7xl mx-auto">
+        <section className="px-8 md:px-16 lg:px-24 py-32 bg-ink text-paper w-full">
+          <div className="max-w-[1500px] mx-auto">
             <FadeInSection>
               <h2 className="text-xs tracking-[0.2em] font-bold text-paper/40 mb-20 uppercase">Philosophy & Space</h2>
             </FadeInSection>
@@ -76,7 +78,8 @@ export default function StudioPage() {
 
 
         {/* Call to Action */}
-        <section className="px-8 md:px-24 py-48 max-w-7xl mx-auto w-full text-center">
+        <section className="px-8 md:px-16 lg:px-24 py-48 max-w-[1500px] mx-auto w-full text-center">
+
 
           <FadeInSection delay={400}>
             <div className="w-full h-px bg-black/10 mb-24"></div>

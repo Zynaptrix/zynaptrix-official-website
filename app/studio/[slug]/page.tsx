@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <PageShell>
       <div className="bg-paper text-ink min-h-screen font-sans selection:bg-ink selection:text-paper">
         {/* Navigation Header */}
-        <header className="max-w-7xl mx-auto px-8 pt-32 pb-16 flex justify-between items-center">
+        <header className="max-w-[1500px] mx-auto px-8 md:px-16 lg:px-24 pt-32 pb-16 flex justify-between items-center">
           <Link
             href="/studio"
             className="group flex items-center gap-4 text-ink/60 hover:text-ink transition-all"
@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </header>
 
-        <article className="max-w-7xl mx-auto px-8 pb-64">
+        <article className="max-w-[1500px] mx-auto px-8 md:px-16 lg:px-24 pb-64">
           {/* Title Section */}
           <div className="mb-48 max-w-5xl">
             <FadeInSection>
@@ -101,6 +101,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                </FadeInSection>
             </div>
           </div>
+
 
           {/* Next Project Link */}
           <div className="mt-80 pt-32 border-t border-ink/10 flex flex-col items-center text-center">
