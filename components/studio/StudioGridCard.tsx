@@ -1,9 +1,6 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { FadeInSection } from "../FadeInSection";
-import React, { useRef } from "react";
-import { useTransition } from "../transitions/TransitionContext";
 import { motion } from "framer-motion";
 
 

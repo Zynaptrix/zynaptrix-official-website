@@ -44,15 +44,14 @@ export default function Home() {
           </h1>
         </div>
       </section>
-
+      <Marquee />
       <StudioSection />
-      
+
       <ProductCarousel />
       <ProcessSection />
       <LabSection />
       <TestimonialsSection />
-      
-      <Marquee />
+
       <CTASection />
 
       <SiteFooter />

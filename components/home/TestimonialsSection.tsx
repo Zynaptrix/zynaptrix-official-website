@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const testimonials = [
   { quote: "Zynatrix didn't just build an app; they engineered an entirely new way for our data to communicate. The architectural elegance is unmatched.", author: "Sarah Jenkins", role: "CTO, Aether Financial" },

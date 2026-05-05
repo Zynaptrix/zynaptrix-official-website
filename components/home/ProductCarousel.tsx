@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, Play, ArrowRight } from 'lucide-react';
 
@@ -164,7 +164,7 @@ export function ProductCarousel() {
           {/* Bottom Bar (Stats) */}
           <div className="absolute bottom-0 left-0 w-full h-32 bg-black/60 backdrop-blur-xl border-t border-white/10 flex items-center z-30">
             <div className="flex w-3/4 px-12 divide-x divide-white/10">
-              {project.stats.map((stat, i) => (
+              {project.stats.map((stat) => (
                 <div key={stat.label} className="flex-1 px-8 first:pl-0">
                   <div className="flex items-baseline gap-1">
                     <span className="text-3xl font-bold text-white tracking-tight font-serif">{stat.value}</span>
